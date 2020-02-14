@@ -1,13 +1,16 @@
 package org.transformers.di.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.transformers.di.Animal;
 import org.transformers.di.Person;
 
 @Component
 public class BusinessPerson implements Person {
+
     @Autowired
+    @Qualifier("dog")
     private Animal animal;
 
     @Override
