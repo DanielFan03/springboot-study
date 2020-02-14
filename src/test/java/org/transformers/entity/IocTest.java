@@ -6,7 +6,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.transformers.config.AppConfig;
+import org.transformers.di.Person;
+import org.transformers.di.impl.BusinessPerson;
 import org.transformers.service.impl.UserServiceImpl;
+
+import javax.sql.DataSource;
 
 public class IocTest {
 
@@ -31,6 +35,20 @@ public class IocTest {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
         UserServiceImpl userService = ctx.getBean(UserServiceImpl.class);
         logger.info(userService.toString());
+    }
+
+    @Test
+    public void testDataSource() {
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        DataSource dataSource = ctx.getBean(DataSource.class);
+        logger.info(dataSource.toString());
+    }
+
+    @Test
+    public void testDI() {
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        Person person = ctx.getBean(BusinessPerson.class);
+        person.service();
     }
 
 }
