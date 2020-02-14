@@ -9,13 +9,13 @@ import org.transformers.di.Person;
 @Component
 public class BusinessPerson implements Person {
 
-//    @Autowired
+    //    @Autowired
 //    @Qualifier("dog")
     private Animal animal;
 
-    public BusinessPerson(@Autowired @Qualifier("dog") Animal animal) {
-        this.animal = animal;
-    }
+//    public BusinessPerson(@Autowired @Qualifier("dog") Animal animal) {
+//        this.animal = animal;
+//    }
 
     @Override
     public void service() {
@@ -23,7 +23,10 @@ public class BusinessPerson implements Person {
     }
 
     @Override
+    @Autowired
+    @Qualifier("dog")
     public void setAnimal(Animal animal) {
+        System.out.println("BusinessPerson.setAnimal");
         this.animal = animal;
     }
 }

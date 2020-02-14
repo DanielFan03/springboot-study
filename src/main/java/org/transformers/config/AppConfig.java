@@ -14,7 +14,8 @@ import java.util.Properties;
 @Configuration
 // 将UserServiceImpl类排出在Spring IoC容器外
 @ComponentScan(basePackages = "org.transformers.*",
-        excludeFilters = {@Filter(classes = Service.class)})
+        excludeFilters = {@Filter(classes = Service.class)},
+        lazyInit = true)
 public class AppConfig {
 
     @Bean(name = "user")
