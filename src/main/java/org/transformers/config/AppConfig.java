@@ -1,10 +1,12 @@
 package org.transformers.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.transformers.entity.User;
 
 @Configuration
+@ComponentScan("org.transformers.*")
 public class AppConfig {
 
     @Bean(name = "user")
