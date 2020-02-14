@@ -2,11 +2,15 @@ package org.transformers.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Service;
 import org.transformers.entity.User;
 
 @Configuration
-@ComponentScan("org.transformers.*")
+// 将UserServiceImpl类排出在Spring IoC容器外
+@ComponentScan(basePackages = "org.transformers.*",
+        excludeFilters = {@Filter(classes = Service.class)})
 public class AppConfig {
 
     @Bean(name = "user")
