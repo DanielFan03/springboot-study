@@ -1,0 +1,25 @@
+
+1.Spring Bean的生命周期
+初始化
+依赖注入
+接口BeanNameAware#setBeanName()
+接口BeanFactoryAware#setBeanFactory()
+接口ApplicationContextAware#setApplicationContext()(需要容器实现ApplicationContext接口才会被调用)
+接口BeanPostProcessor#postProcessBeforeInitialization()(针对全部Bean生效)
+注解@PostConstruct标注方法(自定义初始化方法)
+接口InitializingBean#afterPropertiesSet()
+接口BeanPostProcessor#postProcessAfterInitialization()(针对全部Bean生效)
+生存期
+注解@PreDestroy标注方法(自定义销毁方法)
+接口DisposableBean#destory()
+
+其中：
+1.只有BeanPostProcessor是针对所有Bean而言的，而其他节点都是针对单个Bean而言的；
+2.只有容器实现了ApplicationContext接口才会调用ApplicationContext的setApplicationContext()方法，
+而Spring IoC容器最低要求是实现BeanFactory接口；
+
+如果Bean定义使用的是第三方的类，可以使用注解@Bean来配置自定义初始化和销毁方法，如：
+@Bean(initMethod = "init", destroyMethod = "destroy")
+
+
+
