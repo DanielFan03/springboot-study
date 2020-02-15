@@ -55,3 +55,9 @@ SpringMVC环境中，使用WebApplicationContext提供请求/SCOPE_REQUEST、会
 Spring先断定是否存在spring.profiles.active配置后，再去查找spring.profiles.default配置；
 Java启动项目中，增加如下配置启动Profile机制：
 JAVA_OPTS="-Dspring.profiles.active=dev"
+
+6.引入XML配置Bean
+6.1 定义spring的xml文件，里面配置好pojo信息；
+spring-other.xml
+6.2 在Java配置文件中直接载入上面定义的xml文件；
+@ImportResource(value = {"classpath:spring-other.xml"})

@@ -17,6 +17,7 @@ import java.util.Properties;
 @ComponentScan(basePackages = "org.transformers.*",
         excludeFilters = {@Filter(classes = Service.class)},
         lazyInit = true)
+@ImportResource(value = {"classpath:spring-other.xml"})
 public class AppConfig {
 
     @Bean(name = "user")
