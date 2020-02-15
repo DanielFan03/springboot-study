@@ -51,4 +51,11 @@ public class IocTest {
         person.service();
     }
 
+    @Test
+    public void testSpringEL() {
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        SpringELBean bean = ctx.getBean(SpringELBean.class);
+        System.out.println(bean);
+    }
+
 }

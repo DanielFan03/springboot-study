@@ -61,3 +61,10 @@ JAVA_OPTS="-Dspring.profiles.active=dev"
 spring-other.xml
 6.2 在Java配置文件中直接载入上面定义的xml文件；
 @ImportResource(value = {"classpath:spring-other.xml"})
+
+7.Spring EL
+7.1 #{}代表启用Spring表达式
+7.2 @Value("#{T(System).currentTimeMillis()}")
+其中T(...)代表引入类，除了默认加载包，其他都必须写全限定名；
+7.3 @Value("#{user.note?.toUpperCase()}")
+其中?用来判断这个属性是否为空，如果不为空，则执行toUpperCase方法；
