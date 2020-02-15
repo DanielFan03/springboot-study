@@ -47,4 +47,11 @@ DatabaseConditional实现Condition接口，实现matches方法；
 ConfigurableBeanFactory只提供单例/SCOPE_SINGLETON和原型/SCOPE_PROTOTYPE两种作用域；
 SpringMVC环境中，使用WebApplicationContext提供请求/SCOPE_REQUEST、会话/SCOPE_SESSION和应用SCOPE_APPLICATION；
 
-
+5.@Profile
+5.1 在Spring中存在2个参数提供配置，以修改启动Profile机制；
+5.1.1 spring.profiles.active
+5.1.2 spring.profiles.default
+如果两个属性都没有配置，Spring将不会启动Profile机制，即被@Profile标注的Bean将不会被Spring装配到IoC容器中；
+Spring先断定是否存在spring.profiles.active配置后，再去查找spring.profiles.default配置；
+Java启动项目中，增加如下配置启动Profile机制：
+JAVA_OPTS="-Dspring.profiles.active=dev"

@@ -3,11 +3,8 @@ package org.transformers.config;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.apache.commons.dbcp2.BasicDataSourceFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.ComponentScan.Filter;
-import org.springframework.context.annotation.Conditional;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 import org.transformers.conditional.DatabaseConditional;
 import org.transformers.entity.User;
@@ -69,6 +66,18 @@ public class AppConfig {
             e.printStackTrace();
         }
         return dataSource;
+    }
+
+    @Bean(name = "dataSource1")
+    @Profile("dev")
+    public DataSource getDevDataSource() {
+        return null;
+    }
+
+    @Bean(name = "dataSource1")
+    @Profile("test")
+    public DataSource getTestDataSource() {
+        return null;
     }
 
 }
