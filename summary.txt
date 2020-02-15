@@ -33,5 +33,18 @@
 @Conditional(DatabaseConditional.class)
 DatabaseConditional实现Condition接口，实现matches方法；
 
+4.Bean的作用域
+4.1 在Web容器中，存在页面/page、请求/request、会话/session、应用/application4中作用域；
+对于页面/page，是针对JSP当前页面的作用域，所以Spring是无法支持的；
+4.2 Spring作用域类型
+4.2.1 singleton         所有Spring应用      默认值，IoC容器只存在单例
+4.2.2 prototype         所有Spring应用      每当从IoC容器中取出一个Bean，则创建一个新的Bean
+4.2.3 session           Spring Web应用      HTTP会话
+4.2.4 application       Spring Web应用      Web工程生命周期，可以使用singleton来替代
+4.2.5 request           Spring Web应用      Web工程单次请求（request）
+4.2.5 globalSession     Spring Web应用      在一个全局的HTTP Session中，一个Bean定义对应一个实例。实践中基本不使用
+
+ConfigurableBeanFactory只提供单例/SCOPE_SINGLETON和原型/SCOPE_PROTOTYPE两种作用域；
+SpringMVC环境中，使用WebApplicationContext提供请求/SCOPE_REQUEST、会话/SCOPE_SESSION和应用SCOPE_APPLICATION；
 
 
