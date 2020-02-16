@@ -1,7 +1,7 @@
-package org.transformers.aop.proxy;
+package org.transformers.aop.demo.proxy;
 
-import org.transformers.aop.interceptor.Interceptor;
-import org.transformers.aop.invoke.Invocation;
+import org.transformers.aop.demo.interceptor.Interceptor;
+import org.transformers.aop.demo.invoke.Invocation;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

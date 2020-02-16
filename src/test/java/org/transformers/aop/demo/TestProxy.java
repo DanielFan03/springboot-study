@@ -1,10 +1,10 @@
-package org.transformers.aop;
+package org.transformers.aop.demo;
 
 import org.junit.jupiter.api.Test;
-import org.transformers.aop.interceptor.impl.MyInterceptor;
-import org.transformers.aop.proxy.ProxyBean;
-import org.transformers.aop.service.HelloService;
-import org.transformers.aop.service.impl.HelloServiceImpl;
+import org.transformers.aop.demo.interceptor.impl.MyInterceptor;
+import org.transformers.aop.demo.proxy.ProxyBean;
+import org.transformers.aop.demo.service.HelloService;
+import org.transformers.aop.demo.service.impl.HelloServiceImpl;
 
 public class TestProxy {
     @Test

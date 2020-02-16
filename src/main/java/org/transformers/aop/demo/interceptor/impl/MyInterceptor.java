@@ -1,7 +1,7 @@
-package org.transformers.aop.interceptor.impl;
+package org.transformers.aop.demo.interceptor.impl;
 
-import org.transformers.aop.interceptor.Interceptor;
-import org.transformers.aop.invoke.Invocation;
+import org.transformers.aop.demo.interceptor.Interceptor;
+import org.transformers.aop.demo.invoke.Invocation;
 
 import java.lang.reflect.InvocationTargetException;
 

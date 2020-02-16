@@ -1,6 +1,6 @@
-package org.transformers.aop.interceptor;
+package org.transformers.aop.demo.interceptor;
 
-import org.transformers.aop.invoke.Invocation;
+import org.transformers.aop.demo.invoke.Invocation;
 
 import java.lang.reflect.InvocationTargetException;
 
