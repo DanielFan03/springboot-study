@@ -80,3 +80,19 @@ b.如果拦截器的useAround()方法返回true，则执行拦截器的around方
 c.无论结果如何，在完成之前的事情后，都会执行拦截器的after方法；
 d.在执行around方法或者回调target的事件方法时，如果发生异常，则执行拦截器的afterThrowing方法；
 如果没有发生异常，则执行afterReturing方法；
+
+2.AOP概念
+AOP最为典型的应用实际就是数据库事务的管控；
+AOP还可以减少大量重复的工作；
+Spring AOP是一种基于方法的AOP，它只能应用于方法上；
+AOP术语和流程
+2.1 连接点/join point：对应的是具体被拦截的对象，因为Spring只能支持方法，所以被拦截的对象往往就是指特定的方法；
+2.2 切点/point cut：切面是多个类的不同方法时，通过正则式和指示器的规则定义，适配连接点；
+2.3 通知/advice：按照约定的流程下的方法，分为前置通知/before advice、后置通知/after advice、环绕通知/around advice、
+事后返回通知/afterReturning advice和异常通知/afterThrowing advice；
+2.4 目标对象/target：即被代理对象；
+2.5 引入/introduction：是指引入新的类和其方法，增强现有Bean的功能；
+2.6 织入/weaving：通过动态代理技术，为原有服务对象生成代理对象，然后将与切点定义匹配的连接点拦截，并按约定将各类通知织入约定流程的过程；
+2.7 切面/aspect：是一个可以定义切点、各类通知和引入的内容，Spring AOP将通过它的信息来增强Bean功能或者将对应的方法织入流程；
+
+
