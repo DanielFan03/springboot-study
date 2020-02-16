@@ -1,6 +1,7 @@
 package org.transformers.aop.aspect.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.transformers.aop.aspect.pojo.User;
@@ -40,5 +41,11 @@ public class UserController {
             userService.printUser(user);
         }
         return user;
+    }
+
+    @GetMapping("/manyAspects")
+    public String manyAspects() {
+        userService.manyAspects();
+        return "many aspects";
     }
 }

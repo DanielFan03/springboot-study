@@ -13,4 +13,9 @@ public class UserServiceImpl implements UserService {
         }
         System.out.println(user);
     }
+
+    @Override
+    public void manyAspects() {
+        System.out.println("UserServiceImpl.manyAspects");
+    }
 }
