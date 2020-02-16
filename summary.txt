@@ -1,4 +1,5 @@
 
+一、Spring IoC容器
 1.Spring Bean的生命周期
 初始化
 依赖注入
@@ -68,3 +69,14 @@ spring-other.xml
 其中T(...)代表引入类，除了默认加载包，其他都必须写全限定名；
 7.3 @Value("#{user.note?.toUpperCase()}")
 其中?用来判断这个属性是否为空，如果不为空，则执行toUpperCase方法；
+
+二、Spring AOP
+1.约定编程
+调用proxy对象的方法时，其执行流程如下：
+a.使用proxy调用方法时，会先执行拦截器的before方法；
+b.如果拦截器的useAround()方法返回true，则执行拦截器的around方法，而不调用target对象对应的方法，
+但around方法的参数invocation对象存在一个proceed方法，它可以调用target对象对应的方法；
+如果useAround方法返回false，则直接调用target对象的事件方法；
+c.无论结果如何，在完成之前的事情后，都会执行拦截器的after方法；
+d.在执行around方法或者回调target的事件方法时，如果发生异常，则执行拦截器的afterThrowing方法；
+如果没有发生异常，则执行afterReturing方法；
